@@ -54,7 +54,11 @@ public class Vagar extends Algoritmo {
         //    Ela pode ser útil para se encontrar uma velocidade angular 
         //    (output.angular).
         
+        output.rotacao = randomBinomial() * maxAngular;
         
+        agente.orientacao = (float) (output.rotacao + agente.orientacao);
+        
+        output.velocidade = agente.getOrientacaoComoVetor();
         
         return output;
     }
